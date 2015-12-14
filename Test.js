@@ -42,10 +42,10 @@ Test.prototype.assertEquallish = function( thingOne, thingTwo, descriptor ) {
 Test.prototype.assertNotEqual = function( thingOne, thingTwo, descriptor ) {
 
     if(thingOne === thingTwo)
-        this.addToFailed( "AssertEqual\n     " + thingOne + " : " + typeof(thingOne) + "\n     "
+        this.addToFailed( "AssertNotEqual\n     " + thingOne + " : " + typeof(thingOne) + "\n     "
             + thingTwo + " : " + typeof(thingTwo), descriptor);
     else
-        this.addToPassed( "AssertEqual\n     " + thingOne + " : " + typeof(thingOne) + "\n     "
+        this.addToPassed( "AssertNotEqual\n     " + thingOne + " : " + typeof(thingOne) + "\n     "
             + thingTwo + " : " + typeof(thingTwo), descriptor);
 } //End assertNotEqual
 
@@ -53,10 +53,10 @@ Test.prototype.assertNotEqual = function( thingOne, thingTwo, descriptor ) {
 Test.prototype.assertNotEquallish = function( thingOne, thingTwo, descriptor ) {
 
     if( thingOne != thingTwo ) {
-        this.addToPassed( "AssertEquallish\n     " + thingOne + " : " + typeof(thingOne) + "\n     "
+        this.addToPassed( "AssertNotEquallish\n     " + thingOne + " : " + typeof(thingOne) + "\n     "
             + thingTwo + " : " + typeof(thingTwo), descriptor);
     } else {
-        this.addToFailed( "AssertEquallish\n     " + thingOne + " : " + typeof(thingOne) + "\n     "
+        this.addToFailed( "AssertNotEquallish\n     " + thingOne + " : " + typeof(thingOne) + "\n     "
             + thingTwo + " : " + typeof(thingTwo), descriptor);
     }
 } //END assertNotEquallish
