@@ -17,9 +17,11 @@ Test.prototype.assertEqual = function( thingOne, thingTwo, descriptor ) {
         descriptor === "";
     }
     if( thingOne === thingTwo ) {
-        this.addToPassed( "AssertEqual " + thingOne + " : " + thingTwo, descriptor);
+        this.addToPassed( "AssertEqual\n     " + thingOne + " : " + typeof(thingOne) + "\n     "
+            + thingTwo + " : " + typeof(thingTwo), descriptor);
     } else {
-        this.addToFailed( "AssertEqual " + thingOne + " : " + thingTwo, descriptor);
+        this.addToFailed( "AssertEqual\n     " + thingOne + " : " + typeof(thingOne) + "\n     "
+            + thingTwo + " : " + typeof(thingTwo), descriptor);
     }
 } //END assetEqual
 
@@ -28,9 +30,11 @@ Test.prototype.assertEqual = function( thingOne, thingTwo, descriptor ) {
 Test.prototype.assertEquallish = function( thingOne, thingTwo, descriptor ) {
 
     if( thingOne == thingTwo ) {
-        this.addToPassed( "AssertEquallish " + thingOne + " : " + thingTwo, descriptor);
+        this.addToPassed( "AssertEquallish\n     " + thingOne + " : " + typeof(thingOne) + "\n     "
+            + thingTwo + " : " + typeof(thingTwo), descriptor);
     } else {
-        this.addToFailed( "AssertEquallish " + thingOne + " : " + thingTwo, descriptor);
+        this.addToFailed( "AssertEquallish\n     " + thingOne + " : " + typeof(thingOne) + "\n     "
+            + thingTwo + " : " + typeof(thingTwo), descriptor);
     }
 } //END assertEquallish
 
@@ -62,7 +66,7 @@ Test.prototype.getReport = function( ) {
             console.log("  **************************************************");
             console.log("   Test Failed:");
             console.log("     " + this.failedTests[i].test);
-            if( typeof(failedTests[i].user) !== 'undefined') {
+            if( typeof(this.failedTests[i].user) !== 'undefined') {
                 console.log("    " + this.failedTests[i].user)
             }
             console.log("  **************************************************");
