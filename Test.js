@@ -74,7 +74,7 @@ Test.prototype.getReport = function( ) {
     console.log("  Conducted " + totalTests + " tests.");
     console.log("    Passed " + this.passedTests.length + " tests.");
     console.log("     " + pPassed + " Percent passed");
-    var status == (pPassed == 1) ? "green" : "red";
+    var status = (pPassed == 1) ? "green" : "red";
     console.log("    status: " + status);
     console.log("  **************************************************");
 }
