@@ -47,7 +47,20 @@ Test.prototype.assertNotEqual = function( thingOne, thingTwo, descriptor ) {
     else
         this.addToPassed( "AssertEqual\n     " + thingOne + " : " + typeof(thingOne) + "\n     "
             + thingTwo + " : " + typeof(thingTwo), descriptor);
-}
+} //End assertNotEqual
+
+//Test if two things are not equal, even after coercion
+Test.prototype.assertNotEquallish = function( thingOne, thingTwo, descriptor ) {
+
+    if( thingOne != thingTwo ) {
+        this.addToPassed( "AssertEquallish\n     " + thingOne + " : " + typeof(thingOne) + "\n     "
+            + thingTwo + " : " + typeof(thingTwo), descriptor);
+    } else {
+        this.addToFailed( "AssertEquallish\n     " + thingOne + " : " + typeof(thingOne) + "\n     "
+            + thingTwo + " : " + typeof(thingTwo), descriptor);
+    }
+} //END assertNotEquallish
+
 //Add a test to passedTests
 Test.prototype.addToPassed = function(fromTest, fromUser) {
     var pusher = {};
