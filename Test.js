@@ -38,6 +38,16 @@ Test.prototype.assertEquallish = function( thingOne, thingTwo, descriptor ) {
     }
 } //END assertEquallish
 
+//Test if two things are strictly not equivalent
+Test.prototype.assertNotEqual = function( thingOne, thingTwo, descriptor ) {
+
+    if(thingOne === thingTwo)
+        this.addToFailed( "AssertEqual\n     " + thingOne + " : " + typeof(thingOne) + "\n     "
+            + thingTwo + " : " + typeof(thingTwo), descriptor);
+    else
+        this.addToPassed( "AssertEqual\n     " + thingOne + " : " + typeof(thingOne) + "\n     "
+            + thingTwo + " : " + typeof(thingTwo), descriptor);
+}
 //Add a test to passedTests
 Test.prototype.addToPassed = function(fromTest, fromUser) {
     var pusher = {};
