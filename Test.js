@@ -82,3 +82,11 @@ Test.prototype.getReport = function( ) {
     console.log("    status: " + status);
     console.log("  **************************************************");
 }
+
+Test.prototype.printPassed = function( ) {
+    var i;
+    for(i = 0; i < this.passedTests.length; i++) {
+        console.log("  ************************************************")
+        console.log("  " + this.passedTests[i]);
+    }
+}
