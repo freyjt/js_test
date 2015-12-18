@@ -61,6 +61,20 @@ Test.prototype.assertNotEquallish = function( thingOne, thingTwo, descriptor ) {
     }
 } //END assertNotEquallish
 
+//assert type tests is an object is of an expected type
+Test.prototype.assertType = function(typeString, object, descriptor) {
+
+    if( typeof(object) !== typeString) {
+        this.addToFailed( "AssertType\n        " + object + " : " + typeof(object) + "\n        " 
+            + "Is not " + typeString, descriptor);
+    } else {
+        this.addToPassed( "AssertType\n      " + object + " : " + typeof(object) + "\n         ");
+    }
+} //END assertType
+
+
+
+
 //Add a test to passedTests
 Test.prototype.addToPassed = function(fromTest, fromUser) {
     var pusher = {};
